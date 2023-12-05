@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+    <div style="width: 224px; height: 76px; left: 454px; top: 51px; position: absolute; color: #413BF3; font-size: 25.60px; font-family: Inter; font-weight: 500; line-height: 38.40px; word-wrap: break-word">회원가입을 위해<br/>정보를 입력해주세요.</div>
+    <form action="/join" method="post" >
+      <input type="text" id="id" name="id" placeholder="   Enter Your ID" style="width: 379px; height: 49px; left: 453px; top: 135px; position: absolute; border-radius: 7px; border: 1px black solid"/>
+      <input type="text" id="passWord" name="passWord" placeholder="   Enter Your Password" style="width: 379px; height: 49px; left: 453px; top: 198px; position: absolute; border-radius: 7px; border: 1px black solid"/>
+      <input type="text" id="name" name="name" placeholder="   Enter Your Name" style="width: 379px; height: 49px; left: 453px; top: 260px; position: absolute; border-radius: 7px; border: 1px black solid"/>
+      <input type="text" id="phoneNumber" name="phoneNumber" placeholder="   Enter Your Phone Number" style="width: 379px; height: 49px; left: 453px; top: 323px; position: absolute; border-radius: 7px; border: 1px black solid"/>
+      <input type="text" id="emailAddress" name="emailAddress" placeholder="   Enter Your Email Address" style="width: 379px; height: 49px; left: 453px; top: 388px; position: absolute; border-radius: 7px; border: 1px black solid"/>
+      <input type="number" id="age" name="age" placeholder="   Enter Your Email Age" style="width: 379px; height: 49px; left: 453px; top: 455px; position: absolute; border-radius: 7px; border: 1px black solid"/>
+      <input type="submit" style="width: 379px; height: 49px; left: 453px; top: 552px; position: absolute; background: #413BF3; border-radius: 7px; border: 1px black solid; font-size: 20px; color: white" value = "Sign up"/>
+    </form>
+
+    <div th:if="${error}" style="width: 379px; height: 49px; left: 453px; top: 620px; position: absolute; border-radius: 7px; border: 1px solid red; text-align: center; display: flex; align-items: center; justify-content: center; color: red;">
+      <span th:text="${error}"></span>
+    </div>
+</body>
+</html>

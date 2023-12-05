@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset = "UTF-8">
+    </head>
+    <body>
+        <div style="width: 100%; height: 100%; position: relative">
+            <div style="width: 380px; height: 121px; left: 382.28px; top: 125.17px; position: absolute">
+                <div style="width: 192px; left: 94px; top: 97px; position: absolute; text-align: center; color: #413BF3; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">단체복 종합 플랫폼 서비스</div>
+                <div style="width: 380px; height: 89px; left: 20px; top: 0px; position: absolute; color: #413BF3; font-size: 76.80px; font-family: Inter; font-weight: 500; line-height: 115.20px; word-wrap: break-word">GAZAMSA</div>
+            </div>
+
+            <form action="/login" method="post">
+                <div style="width: 379.31px; height: 51.99px; left: 382.56px; top: 284.38px; position: absolute">
+                    <input type = "text" id="userId" name="userId" style="width: 379.31px; height: 51.99px; left: 0px; top: 0px; position: absolute; border-radius: 15px; border: 0.91px black solid" placeholder="   Enter Your ID"/>
+                </div>
+                <div style="width: 379.31px; height: 51.99px; left: 382.56px; top: 352.81px; position: absolute">
+                    <input type = "password" id="pw" name="pw" style="width: 379.31px; height: 51.99px; left: 0px; top: 0px; position: absolute; border-radius: 15px; border: 0.91px black solid" placeholder="   Enter Your Password"/>
+                </div>
+                <div style="width: 379.31px; height: 51.99px; left: 382.28px; top: 421.17px; position: absolute">
+                    <input type="submit" style="width: 379.31px; height: 51.99px; left: 0px; top: 0px; position: absolute; background: #413BF3; border-radius: 15px; border: 0.91px #413BF3 solid; font-size: 20px; color: white" value = "Login"/>
+                </div>
+            </form>
+
+            <div style="left: 402.28px; top: 490.17px; position: absolute; text-align: center; color: black; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Don’t have an account? Sign up</div>
+            <a th:href="@{/signup}" style="left: 668.28px; top: 490.17px; position: absolute; color: #413BF3; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">HERE!</a>
+            <div th:if="${error}" style="width: 379.31px; height: 51.99px; left: 382.28px; top: 520.17px; position: absolute; border-radius: 15px; border: 0.91px white solid; text-align: center; display: flex; align-items: center; justify-content: center; color: red;"> <span th:text="${error}"></span></div>
+        </div>
+    </body>
+</html>

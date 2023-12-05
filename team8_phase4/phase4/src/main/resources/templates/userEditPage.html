@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div style="width: 100%; height: 100%; position: relative">
+    <div style="width: 1215px; height: 47px; left: 0px; top: 0px; position: absolute; background: #413BF3"></div>
+    <div style="left: 8.67px; top: 5.69px; position: absolute; color: white; font-size: 25.60px; font-family: Inter; font-weight: 500; line-height: 38.40px; word-wrap: break-word">GAZAMSA</div>
+    <a th:href="@{/favorite}" style="left: 613px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Favorite</a>
+    <a th:href="@{/review}" style="left: 705px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Review</a>
+    <a th:href="@{/purchase}" style="left: 421px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Products Purchased</a>
+    <a th:href="@{/userInfo}" style="left: 265px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Edit Information</a>
+    <a th:href="@{/mainPage}" style="left: 153px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Main Page</a>
+    <a th:href="@{/shoppingCart}" style="left: 791px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Shopping Cart</a>
+    <div style="width: 398.61px; height: 70.57px; left: 379.99px; top: 70.26px; position: absolute; background: #413BF3; border-radius: 15px; border: 2.74px #413BF3 solid"></div>
+    <div style="width: 510.18px; height: 0px; left: 332px; top: 171px; position: absolute; border: 2.44px #413BF3 solid"></div>
+    <div style="left: 433px; top: 82px; position: absolute; color: white; font-size: 32px; font-family: Inter; font-weight: 500; line-height: 48px; word-wrap: break-word">Edit My Information</div>
+    <form th:object="${normalUser}" action="/editUserInfo" method="post">
+        <div style="width: 346px; height: 59px; left: 433px; top: 224px; position: absolute">
+            <div style="left: 0px; top: 0px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word">기존 비밀번호</div>
+            <div style="left: 142px; top: 0px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word">변경할 비밀번호</div>
+            <div style="width: 54px; height: 30px; left: 292px; top: 29px; position: absolute">
+            </div>
+            <div style="width: 115px; height: 14px; left: 0px; top: 30px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word" th:text="${normalUser.passWord}"></div>
+            <div style="width: 115px; height: 22px; left: 0px; top: 33px; position: absolute; border: 1px black solid"></div>
+            <input type="text" id="pw" name="pw" style="width: 115px; height: 22px; left: 151px; top: 33px; position: absolute; border: 1px black solid"/>
+        </div>
+        <div style="width: 346px; height: 59px; left: 433px; top: 306px; position: absolute">
+            <div style="left: 18px; top: 0px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word">기존 이름</div>
+            <div style="left: 160px; top: 0px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word">변경할 이름</div>
+            <div style="width: 54px; height: 30px; left: 292px; top: 29px; position: absolute">
+            </div>
+            <div style="width: 115px; height: 14px; left: 0px; top: 30px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word" th:text="${normalUser.name}"></div>
+            <div style="width: 115px; height: 22px; left: 0px; top: 33px; position: absolute; border: 1px black solid"></div>
+            <input type="text" id="name" name="name" style="width: 115px; height: 22px; left: 151px; top: 33px; position: absolute; border: 1px black solid"/>
+        </div>
+        <div style="width: 346px; height: 59px; left: 434px; top: 552px; position: absolute">
+            <div style="left: 18px; top: 0px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word">기존 나이</div>
+            <div style="left: 155px; top: 3px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word">변경할 나이</div>
+            <div style="width: 54px; height: 30px; left: 292px; top: 29px; position: absolute">
+                <input type="submit" style="width: 54px; height: 27px; left: 0px; top: 1px; position: absolute; border: 1px black solid" placeholder="변경"></input>
+            </div>
+            <div style="width: 115px; height: 14px; left: 0px; top: 30px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word" th:text="${normalUser.age}"></div>
+            <div style="width: 115px; height: 22px; left: 0px; top: 33px; position: absolute; border: 1px black solid"></div>
+            <input type = "number" id="age" name="age" style="width: 115px; height: 22px; left: 151px; top: 33px; position: absolute; border: 1px black solid"/>
+        </div>
+        <div style="width: 424px; height: 59px; left: 395px; top: 388px; position: absolute">
+            <div style="left: 20px; top: 0px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word">기존 전화번호</div>
+            <div style="left: 197px; top: 3px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word">변경할 전화번호</div>
+            <div style="width: 54px; height: 30px; left: 370px; top: 29px; position: absolute">
+            </div>
+            <div style="width: 151px; height: 15px; left: 0px; top: 29px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word" th:text="${normalUser.phoneNumber}"></div>
+            <div style="width: 154px; height: 22px; left: 0px; top: 33px; position: absolute; border: 1px black solid"></div>
+            <input type="text" id="phoneNumber" name="phoneNumber" style="width: 154px; height: 22px; left: 189px; top: 33px; position: absolute; border: 1px black solid"/>
+        </div>
+        <div style="width: 635px; height: 59px; left: 289px; top: 470px; position: absolute">
+            <div style="left: 96px; top: 3px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word">기존 이메일</div>
+            <div style="left: 376px; top: 0px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word">변경할 이메일</div>
+            <div style="width: 54px; height: 30px; left: 581px; top: 29px; position: absolute">
+            </div>
+            <div style="width: 273px; height: 15px; left: 0px; top: 29px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word" th:text="${normalUser.emailAddress}"></div>
+            <div style="width: 254px; height: 22px; left: 9px; top: 33px; position: absolute; border: 1px black solid"></div>
+            <input type="text" id="emailAddress" name="emailAddress" style="width: 254px; height: 22px; left: 295px; top: 33px; position: absolute; border: 1px black solid"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>

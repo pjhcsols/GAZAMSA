@@ -1,0 +1,49 @@
+Spring Boot에서 트랜잭션 관리:
+
+@Service
+@Transactional
+public class YourService {
+
+    @Autowired
+    private YourRepository yourRepository;
+
+    public void updateData(Long id, String newData) {
+        // your business logic
+        yourRepository.save(new YourEntity(id, newData));
+    }
+}
+
+Oracle에서 격리 수준 설정:
+
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class YourRepository {
+
+    private JdbcTemplate jdbcTemplate;
+
+    public YourRepository(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public void setSerializableIsolation() {
+        jdbcTemplate.execute("SET TRANSACTION ISOLATION LEVEL SERIALIZABLE");
+    }
+}
+
+4. 동시성 제어 실패 시의 처리:
+Spring Boot에서 롤백 설정:
+
+
+@Service
+@Transactional(rollbackFor = Exception.class)
+public class YourService {
+
+    @Autowired
+    private YourRepository yourRepository;
+
+    public void updateData(Long id, String newData) {
+        // your business logic
+        yourRepository.save(new YourEntity(id, newData));
+    }
+}

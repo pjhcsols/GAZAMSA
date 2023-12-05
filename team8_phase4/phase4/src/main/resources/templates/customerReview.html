@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Reviews</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <div style="width: 100%; height: 100%; position: relative">
+    <div style="width: 1215px; height: 47px; left: 0px; top: 0px; position: absolute; background: #413BF3"></div>
+    <div style="left: 8.67px; top: 5.69px; position: absolute; color: white; font-size: 25.60px; font-family: Inter; font-weight: 500; line-height: 38.40px; word-wrap: break-word">GAZAMSA</div>
+    <a th:href="@{/favorite}" style="left: 613px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Favorite</a>
+    <a th:href="@{/review}" style="left: 705px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Review</a>
+    <a th:href="@{/purchase}" style="left: 421px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Products Purchased</a>
+    <a th:href="@{/userInfo}" style="left: 265px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Edit Information</a>
+    <a th:href="@{/mainPage}" style="left: 153px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Main Page</a>
+    <a th:href="@{/shoppingCart}" style="left: 791px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Shopping Cart</a>
+    <!-- Reviews will be dynamically added here -->
+  </div>
+  <div id="review-form" style="display: none;">
+    <h2>Write a Review</h2>
+  </div>
+  <form th:object="${item}" th:action="@{/writeReview/{productId}(productId=${item.productId})}" method="post">
+    <input type = "text" id="title" name="title" style="width: 600px; height: 50px; left: 200px; top: 120px; position: absolute; border-radius: 15px; border: 0.91px black solid" placeholder="   제목을 작성해주세요"/>
+    <input type = "text" id="body" name="body" style="width: 600px; height: 400px; left: 200px; top: 200px; position: absolute; border-radius: 15px; border: 0.91px black solid" placeholder="   리뷰를 작성해주세요"/>
+    <input type="submit" style="width: 379.31px; height: 51.99px; left: 300px; top: 620px; position: absolute; background: #413BF3; border-radius: 15px; border: 0.91px #413BF3 solid; font-size: 20px; color: white" value = "리뷰 제출"/>
+  </form>
+</div>
+</body>
+</html>

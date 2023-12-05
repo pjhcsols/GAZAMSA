@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<div style="width: 100%; height: 100%; position: relative">
+    <div style="width: 1215px; height: 47px; left: 0px; top: 0px; position: absolute; background: #413BF3"></div>
+    <div style="left: 8.67px; top: 5.69px; position: absolute; color: white; font-size: 25.60px; font-family: Inter; font-weight: 500; line-height: 38.40px; word-wrap: break-word">GAZAMSA</div>
+    <a th:href="@{/favorite}" style="left: 613px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Favorite</a>
+    <a th:href="@{/review}" style="left: 705px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Review</a>
+    <a th:href="@{/purchase}" style="left: 421px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Products Purchased</a>
+    <a th:href="@{/userInfo}" style="left: 265px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Edit Information</a>
+    <a th:href="@{/mainPage}" style="left: 153px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Main Page</a>
+    <a th:href="@{/shoppingCart}" style="left: 791px; top: 12px; position: absolute; color: #95B3D7; font-size: 17.60px; font-family: Inter; font-weight: 500; line-height: 26.40px; word-wrap: break-word">Shopping Cart</a>
+    <div style="width: 398.61px; height: 70.57px; left: 379.99px; top: 70.26px; position: absolute; background: #413BF3; border-radius: 15px; border: 2.74px #413BF3 solid"></div>
+    <div style="width: 510.18px; height: 0px; left: 332px; top: 171px; position: absolute; border: 2.44px #413BF3 solid"></div>
+    <div th:each="item, itemStat : ${items}" th:style="'width: 187px; height: 220px; left: ' + ${itemStat.index % 2 == 0 ? 54  : 572 + 54} + 'px; top: ' + (${(itemStat.index / 2) * 264 + 194}) + 'px; position: absolute'">
+        <img th:style="'width: 172px; height: 143px; left: 7px; top: 7px; position: absolute'" th:src="${item.productPhotoImage}" />
+        <div th:style="'width: 187px; height: 220px; left: 0px; top: 0px; position: absolute; border: 1px #413BF3 solid'"></div>
+        <div th:style="'width: 123px; height: 41px; left: 33px; top: 160px; position: absolute; text-align: center; color: black; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word'"
+             th:text="${item.productName}"></div>
+        <div th:style="'width: 123px; height: 41px; left: 33px; top: 180px; position: absolute; text-align: center; color: black; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word'"
+             th:text="${item.productPrice}"></div>
+    </div>
+    <div style="left: 507px; top: 82px; position: absolute; color: white; font-size: 32px; font-family: Inter; font-weight: 500; line-height: 48px; word-wrap: break-word">My Review</div>
+    <div th:each="review, reviewStat : ${reviews}" th:style="'width: 337px; height: 213px; left: ' + (${reviewStat.index % 2 == 0 ? 265 : 842}) + 'px; top: ' + (${(reviewStat.index / 2) * 264 + 194}) + 'px; position: absolute'">
+        <!-- Review 내용 -->
+        <div style="width: 337px; height: 213px; left: 0px; top: 0px; position: absolute; text-align: center; color: black; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word" th:text="${review.review}"></div>
+        <!-- Review 테두리 -->
+        <div style="width: 337px; height: 213px; left: 0px; top: 0px; position: absolute; border: 1px black solid"></div>
+    </div>
+</div>
+</html>
